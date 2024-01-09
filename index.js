@@ -37,7 +37,7 @@ function themNV(nhanVien) {
 function xoaNv(nhanVien) {
   console.log("yes", nhanVien);
 
-  var index = ""; // Initialize index to -1 if the item is not found
+  var index = layThongTinTuForm(); // Initialize index to -1 if the item is not found
   for (var i = 0; i < danhSachNhanVien.length; i++) {
     if (danhSachNhanVien[i].taiKhoan == nhanVien) {
       index = i;
@@ -48,6 +48,8 @@ function xoaNv(nhanVien) {
   }
   console.log("🚀 ~ file: index.js:100 ~ xoaNv ~ index:", index);
   danhSachNhanVien.splice(index, 1);
+  var dataJson = JSON.stringify(danhSachNhanVien);
+  localStorage.setItem("DSNV", dataJson);
   renderDSNV();
 
 }

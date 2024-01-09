@@ -18,7 +18,11 @@ function renderDSNV() {
           </button>
           <button type="button" onclick="suaNv('${
             nv.taiKhoan
-          }')" class="btn btn-success">
+          }')" class="btn btn-success"
+          data-toggle="modal"
+					data-target="#myModal"
+          
+          >
          Sửa
           </button>
           </td>
@@ -30,17 +34,17 @@ function renderDSNV() {
 }
 
 function layThongTinTuForm() {
-    var taiKhoan = document.getElementById("tknv").value;
-    var hoTen = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var passWord = document.getElementById("password").value;
-    var ngayLam = document.getElementById("datepicker").value;
-    var luongCb = document.getElementById("luongCB").value * 1;
-    var chucVu = document.getElementById("chucvu").value;
+  var taiKhoan = document.getElementById("tknv").value;
+  var hoTen = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var passWord = document.getElementById("password").value;
+  var ngayLam = document.getElementById("datepicker").value;
+  var luongCb = document.getElementById("luongCB").value * 1;
+  var chucVu = document.getElementById("chucvu").value;
   var gioLam = document.getElementById("gioLam").value * 1;
- 
+
   // var tongLuong =  tinhTongLuong(chucVu, luongCb);
-  
+
   var nhanVien = {
     taiKhoan: taiKhoan,
     hoTen: hoTen,
@@ -75,8 +79,6 @@ function layThongTinTuForm() {
         return "nhân viên trung bình";
       }
     },
-    
-  }
+  };
   return nhanVien;
-  
 }

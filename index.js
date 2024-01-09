@@ -74,7 +74,7 @@ function suaNv(nhanVien) {
   document.getElementById("gioLam").value = nv.gioLam;
 }
 
-function capNhatNv() {
+function capNhatNv(nhanVien) {
   var nhanVien = layThongTinTuForm();
   var index = "";
   for (var i = 0; i < danhSachNhanVien.length; i++) {
@@ -83,6 +83,8 @@ function capNhatNv() {
     }
   }
   danhSachNhanVien[index] = nhanVien;
+  var dataJson = JSON.stringify(danhSachNhanVien);
+  localStorage.setItem("DSNV", dataJson);
   renderDSNV();
 }
 
